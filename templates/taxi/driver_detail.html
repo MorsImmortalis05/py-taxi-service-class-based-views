@@ -1,13 +1,13 @@
-<{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-    <h1>Driver: ({{ Driver.nickname }})</h1>
+    <h1>Driver: ({{ driver.nickname }})</h1>
     <div class="ml-r">
       <h3>Cars: </h3>
-    {% for car in Driver.cars.all %}
+    {% for car in driver.cars.all %}
       <hr>
-      <p class="text-muted">{{ author.id }}</p>
-      <p>{{ car.manufacturer }} {{ car.model }}
+      <p class="text-muted">{{ car.id }}</p>
+      <p>{{ car.manufacturer.name }} {{ car.model }}
       </p>
       {% empty %}
         <p>No cars!</p>
